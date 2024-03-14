@@ -1,15 +1,15 @@
 from django.shortcuts import render
-### test data
+
 messages = [
     {
         'author': 'alek',
         'content': 'First post content',
-        'date_posted': 'last week'
+        'date_posted': 'August 27, 2018'
     },
     {
-        'author': 'Ben dover',
+        'author': 'BEN',
         'content': 'Second post content',
-        'date_posted': 'today'
+        'date_posted': 'August 28, 2018'
     }
 ]
 
@@ -17,7 +17,7 @@ def home(request):
     context = {
         'messages' : messages
     }
-    return render(request,'gym_app/home.html',context)#####
+    return render(request,'gym_app/home.html',context)
 
 def about(request):
-   return render(request,'gym_app/about.html')#####
+   return render(request,'gym_app/about.html')
