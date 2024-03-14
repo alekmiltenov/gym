@@ -39,3 +39,6 @@ def profile(request):
         'p_form' : p_form
     }
     return render(request, 'gym_register/profile.html',context)
+
+    ### u_form
+    ### p_form
