@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from registration import views as user_view
+from gym_register import views as user_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
