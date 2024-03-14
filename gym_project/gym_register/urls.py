@@ -1,4 +1,3 @@
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', ),
-]
+from django.urls import path
+from . import views
+
