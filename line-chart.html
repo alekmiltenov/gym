@@ -1,7 +1,8 @@
-<script <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js" integrity="sha512-CWVDkca3f3uAWgDNVzW+W4XJbiC3CH84P2aWZXj+DqI6PNbTzXbl1dIzEHeNJpYSn4B6U8miSZb/hCws7FnUZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<div style="width: 750px; height: 350px;">
-    <canvas id="myChart"></canvas>
-</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js" integrity="sha512-CWVDkca3f3uAWgDNVzW+W4XJbiC3CH84P2aWZXj+DqI6PNbTzXbl1dIzEHeNJpYSn4B6U8miSZb/hCws7FnUZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <div style="width: 750px; height: 350px;">
+        <canvas id="myChart"></canvas>
+    </div>
 
 <script>
 
@@ -39,6 +40,10 @@
 
     const chart = new Chart(
         document.getElementById('myChart'),
+        config
+    );
+    const chart1 = new Chart(
+        document.getElementById('myChart1'),
         config
     );
 </script>
