@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "gym_app/base.html" %}#######
     <h1>Home</h1>
-</body>
-</html>
+
+    {% for message in messages %}
+    <b>{{message.author}}</b>
+    <p>{{ message.content }}</p>
+    <h6>{{ message.date_posted }}</h6>
+    {% endfor %}
