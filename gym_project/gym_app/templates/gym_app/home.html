@@ -1,8 +1,0 @@
-{% extends "gym_app/base.html" %}#######
-    <h1>Home</h1>
-
-    {% for message in messages %}
-    <b>{{message.author}}</b>
-    <p>{{ message.content }}</p>
-    <h6>{{ message.date_posted }}</h6>
-    {% endfor %}
