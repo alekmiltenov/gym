@@ -20,5 +20,6 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', ),
+    path('', ),#home
+    path('register/',user_view.registe , name="register")
 ]
