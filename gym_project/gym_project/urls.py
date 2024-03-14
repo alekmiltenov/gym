@@ -20,5 +20,5 @@ from gym_register import views as user_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/', user_view.register, name='register'),
+    path('', include('gym_app.urls'), name='home'),
 ]
