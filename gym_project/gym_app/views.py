@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView, CreateView
 from django.db.models import Avg
 from django.db.models.functions import TruncMonth
 from .models import MuscleMeasurement
+from .forms import DataForm
 
 # Create your views here.
 
@@ -52,6 +53,7 @@ def personal_stats(request):
 class MuscleMeasurementDetailView(DetailView):
     muscles = ["abdominals", "obliques", "forearms", "biceps", "traps", "chest", "quads", "calves"]
     model = MuscleMeasurement
+    form_class = DataForm
     context_object_name = "muscle_stats"
     def get_muscle_measurements(request, muscle_to_query):
     # Filter for biceps measurements
@@ -62,7 +64,7 @@ class MuscleMeasurementDetailView(DetailView):
         dates = []
 
         # Populate the arrays
-        for measurement in biceps_measurements:
+        for measurement in muscle_measurements:
             measurements.append(measurement.measurement)
             dates.append(measurement.date_time.strftime('%Y-%m-%d'))
         
@@ -110,7 +112,7 @@ class MuscleMeasurementCreateView(CreateView):
         else:
             form = DataForm()
 
-        return render(request, 'gym_app/add_stats.html', {'form': form})
+        return render(request, 'gym_app/measurements.html', {'form': form})
 
 def about(request):
     return render(request, 'gym_app/about.html', {'title': 'About'})
