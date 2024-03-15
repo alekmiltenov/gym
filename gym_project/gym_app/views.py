@@ -73,7 +73,7 @@ class MuscleMeasurementDetailView(DetailView):
             all_muscle_data[muscle]=muscle_measurements
             all_muscle_data[muscle+ "_date"]=muscle_dates
             
-        return all_muscle_data   
+        return all_muscle_data 
 
 class MuscleMeasurementCreateView(CreateView):
     model = MuscleMeasurement
@@ -87,6 +87,21 @@ class MuscleMeasurementCreateView(CreateView):
             muscle=key ,
         )
             measurement.save()
+            
+    def submit_data(request):
+    if request.method == 'POST':
+        form = DataForm(request.POST)
+        if form.is_valid():
+            data_json = form.cleaned_data['muscle_data']
+            data_dict = json.loads(data_json)  # Convert JSON string back to Python dict
+            measurements.save(data_dict)
+            # Process your data_dict here
+            
+            return redirect('success_url') 
+    else:
+        form = DataForm()
+
+    return render(request, 'add_stats.html', {'form': form})
 
 def about(request):
     return render(request, 'gym_app/about.html', {'title': 'About'})
