@@ -4,6 +4,8 @@ from django.db.models import Avg
 from django.db.models.functions import TruncMonth
 from .models import MuscleMeasurement
 from .forms import DataForm
+from django import forms
+
 
 def home(request):
     context = {
@@ -86,6 +88,15 @@ class MuscleMeasurementDetailView(DetailView):
 
 class MuscleMeasurementCreateView(CreateView):
     model = MuscleMeasurement
+    fields = ['date_time', 'measurement', 'muscle']  
+    widgets = {
+        'date_time': forms.HiddenInput(),
+        'muscle': forms.HiddenInput(),
+        'measurement': forms.HiddenInput(),
+    }
+    template_name = 'measurments.html'  
+    success_url = '/success-url/'  
+    
     def save_muscle_measurements(muscle_map):
         for key, value in muscle_map:
             user = self.request.user
