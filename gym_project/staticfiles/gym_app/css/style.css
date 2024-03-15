@@ -1,0 +1,43 @@
+/* Base Styles */
+body, h1, h2, h3, p, nav, a {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    background-color: #2a2a2a; /* Dark background for contrast */
+    padding: 10px 20px; /* Spacing around the navbar */
+    display: flex;
+    align-items: center;
+}
+
+#logo-link img {
+    height: 50px; /* Adjust the logo size */
+    width: auto;
+    margin-right: 20px; /* Space after the logo */
+}
+
+nav a {
+    color: white; /* Light text for contrast */
+    text-decoration: none;
+    margin-right: 15px; /* Spacing between links */
+    padding: 8px 10px; /* Padding around link text for better touch target */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+nav a:hover, nav a:focus {
+    background-color: #4a4a4a; /* Slightly lighter background on hover/focus */
+    border-radius: 5px; /* Rounded corners for the hover/focus background */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    #logo-link img {
+        margin-bottom: 10px; /* Extra space below the logo on smaller screens */
+    }
+}
