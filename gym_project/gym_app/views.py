@@ -52,6 +52,7 @@ def personal_stats(request):
 class MuscleMeasurementDetailView(DetailView):
     muscles = ["abdominals", "obliques", "forearms", "biceps", "traps", "chest", "quads", "calves"]
     model = MuscleMeasurement
+    form_class = DataForm
     context_object_name = "muscle_stats"
     def get_muscle_measurements(request, muscle_to_query):
     # Filter for biceps measurements
@@ -62,7 +63,7 @@ class MuscleMeasurementDetailView(DetailView):
         dates = []
 
         # Populate the arrays
-        for measurement in biceps_measurements:
+        for measurement in muscle_measurements:
             measurements.append(measurement.measurement)
             dates.append(measurement.date_time.strftime('%Y-%m-%d'))
         
