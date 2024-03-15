@@ -19,7 +19,7 @@
     </header>
     <style>
         #navbar{
-            background-color: hsl(0, 0%, 42%);
+            background-color: hsla(0, 2%, 12%, 0.89);
         }
         #navbar img{
             margin-right: 15px;
@@ -45,7 +45,7 @@
             text-align: left;
         }
         #navbar a:hover{
-            background-color: hsl(0, 0%, 10%);
+            background-color: rgba(104, 103, 103, 0.658);
         }
         #img1{
             position: fixed;
@@ -56,13 +56,12 @@
     <footer>
         <div class="container">
             <div class="footer-container" id="contacts">
-                <h5>Contact Us</h5>
+                <h5>Contact Us:</h5>
                 <p>Email: Info@gmail.com</p>
                 <p>Phone: 088XXXXXXX</p>
             </div>
             <div class="footer-container" id="quick">
-                <h5>Quick Links</h5>
-
+                <h5>Quick link:</h5>
                 <ul>
                     <li><a href="personal_stats.html">Personal Stats</a></li>
                     <li><a href="personal_stats.html">Add Personal Record</a></li>
@@ -77,24 +76,26 @@
     </footer>
     <style>
         footer{
-            padding-top: 15px;
-            padding-bottom: 15px;
             position: fixed;
-            left: 0;
             bottom: 0;
-            height: 25%;
+            page: 0;
+            height: 27%;
             width: 100%;
-            background-color: hsl(0, 0%, 42%);
+            background-color: hsla(0, 2%, 12%, 0.89);
         }
         .container{
             display: flex;
-            justify-content: center;
+            flex-direction: row-reverse;
+            justify-content: space-between;   
         }
         #contacts{
             color: white;
             font-size: 16px;
             position: fixed;
-            left: 10px;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            bottom: 7px;
+            left : 10px;
             display: block;
         }
         #quick{
@@ -102,6 +103,7 @@
             color: white;
             font-size: 16px;
             position: fixed;
+            bottom: 7px;
             left: 35%;
             display: block;
         }
@@ -119,7 +121,7 @@
             text-decoration: none;
         }
          ul a:hover{
-            background-color: rgba(58, 57, 57, 0.123);
+            background-color: rgba(104, 103, 103, 0.658);
         }
 
     </style>
