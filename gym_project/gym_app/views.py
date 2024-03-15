@@ -29,10 +29,19 @@ class MuscleMeasurementListView(ListView):
         ).annotate(
             average_measurement=Avg('measurement')
         ).order_by('month')
-
-        # Convert QuerySet to a list of dictionaries for easier manipulation or response rendering
+  
         monthly_averages = list(measurements)
-    
+
+        # Extracts the months from the monthly_averages
+        months_list = [measurement['month'].strftime('%Y-%m') for measurement in monthly_averages]
+
+        
+        response_data = {
+            'monthly_averages': monthly_averages,
+            'months_list': months_list,
+        }
+
+        return response_data
 
 def personal_stats(request):
     context = {
