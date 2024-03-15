@@ -94,7 +94,7 @@ class MuscleMeasurementCreateView(CreateView):
         'muscle': forms.HiddenInput(),
         'measurement': forms.HiddenInput(),
     }
-    template_name = 'measurments.html'  
+    template_name = 'gym_app/measurments.html'  
     success_url = '/success-url/'  
     
     def save_muscle_measurements(muscle_map):
