@@ -121,15 +121,32 @@ function onAbdominalsClick() {
 var submit = document.getElementById('sumbit');
 
 function sumbited() {
-    const muscle_data = new Map ([
-        ['abdominals', document.getElementById('abdominals_input').value],
-        ['obliques', document.getElementById('obliques_input').value],
-        ['forearms', document.getElementById('forearms_stats').value],
-        ['biceps', document.getElementById('biceps_stats')],
-        ['traps', document.getElementById('traps_stats')],
-        ['chest', document.getElementById('chest_stats')],
-        ['quads', document.getElementById('quads_stats')],
-        ['calves', document.getElementById('calves_stats')]
-    ])
-    console.log(muscle_data)
+    const muscle_data = {};
+    if(document.getElementById('abdominals_input').value != ' ') {
+        muscle_data.set('abdominals', document.getElementById('abdominals_input').value);
+    }
+    if(document.getElementById('obliques_input').value != ' ') {
+        muscle_data.set('obliques', document.getElementById('obliques_input').value);
+    }
+    if(document.getElementById('forearms_stats').value != ' ') {
+        muscle_data.set('forearms', document.getElementById('forearms_input').value);
+    }
+    if(document.getElementById('biceps_input').value != ' ') {
+        muscle_data.set('biceps', document.getElementById('biceps_input').value);
+    }
+    if(document.getElementById('traps_input').value != ' ') {
+        muscle_data.set('traps', document.getElementById('traps_input').value);
+    }
+    if(document.getElementById('chest_input').value != ' ') {
+        muscle_data.set('chest', document.getElementById('chest_input').value);
+    }
+    if(document.getElementById('quads_input').value != ' ') {
+        muscle_data.set('quads', document.getElementById('quads_input').value);
+    }
+    if(document.getElementById('calves_input').value != ' ') {
+        muscle_data.set('calves', document.getElementById('calves_input').value);
+    }
+    const dataJson = JSON.stringify(muscle_data);
+    document.querySelector('[name="data"]').value = dataJson;
+    document.getElementById('dataForm').submit();
 }
