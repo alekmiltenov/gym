@@ -114,3 +114,22 @@ function onAbdominalsClick() {
     flag = 8;
     clear();
 }
+
+
+//submit button 
+
+var submit = document.getElementById('sumbit');
+
+function sumbited() {
+    const muscle_data = new Map ([
+        ['abdominals', document.getElementById('abdominals_input').value],
+        ['obliques', document.getElementById('obliques_input').value],
+        ['forearms', document.getElementById('forearms_stats').value],
+        ['biceps', document.getElementById('biceps_stats')],
+        ['traps', document.getElementById('traps_stats')],
+        ['chest', document.getElementById('chest_stats')],
+        ['quads', document.getElementById('quads_stats')],
+        ['calves', document.getElementById('calves_stats')]
+    ])
+    console.log(muscle_data)
+}
