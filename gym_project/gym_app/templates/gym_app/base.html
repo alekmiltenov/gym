@@ -8,8 +8,9 @@
 <body>
     <header>
     <nav id="navbar">
-       <a href="/"><img src="#" id="img1"></a>
+       
         <ul>
+            <li><a href="/"><img src="#" id="img1"></a></li>
             <li><a href="/stats">Personal Stats</a></li>
             <li><a href="/stats/new">Add Personal Record</a></li>         
                 {% if user.is_authenticated %}
@@ -26,6 +27,10 @@
     </header>
     <style>
         #navbar{
+        position: fixed;
+        top: 0;
+        width: 100%; /* Ensure full width */
+        z-index: 1000; /* Ensure it's above other content */
             background-color: hsla(0, 2%, 12%, 0.89);
         }
         #navbar img{
@@ -59,40 +64,19 @@
             left: 0;
             top: 0;
         }
-    </style>
-    <footer id="footer">
-        <div class="container">
-            <div class="footer-container" id="contacts">
-                <h5>Contact Us:</h5>
-                <p>Email: Info@gmail.com</p>
-                <p>Phone: 088XXXXXXX</p>
-            </div>
-            <div class="footer-container" id="quick">
-                <h5>Quick link:</h5>
-                <ul>
-                    <li><a href="personal_stats.html">Personal Stats</a></li>
-                    <li><a href="personal_stats.html">Add Personal Record</a></li>
-                    <li><a href="personal_stats.html">Sign In</a></li>
-                    <li><a href="profile/">Profile</a></li>
-                </ul>
-            </div>
-            <div class="footer-container" id="img">
-                <img src="#">
-            </div>
-        </div>
-    </footer>
-    <style>
     body{
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+        padding-top: 60px; /* Adjusted based on the height of the header */
+        padding-bottom: 27%; /* Adjusted based on the height of the footer */
     }  
         #footer{ 
             position: relative;
-            bottom: 0;
             height: 27%;
             width: 100%;
-            background-color: blue;
+            color: blue;
+
         }
         .container{
             display: flex;
@@ -136,18 +120,10 @@
         }
 
     </style>
-
-
-
-<!--------------------------------------------------------->
-
-
-    
-      <main>
+      <div>
         {% block content %}{% endblock %}
-
-      </main>
-      <footer id="footer">
+      </div>
+      <div id = "footer">
         <div class="container">
             <div class="footer-container" id="contacts">
                 <h5>Contact Us:</h5>
@@ -167,6 +143,6 @@
                 <img src="#">
             </div>
         </div>
-    </footer>
+</div>
 </body>
 </html>
