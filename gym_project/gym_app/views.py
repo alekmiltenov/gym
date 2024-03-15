@@ -97,11 +97,11 @@ class MuscleMeasurementCreateView(CreateView):
             measurements.save(data_dict)
             # Process your data_dict here
             
-            return redirect('success_url') 
+            return redirect('gym_app/success.html') 
     else:
         form = DataForm()
 
-    return render(request, 'add_stats.html', {'form': form})
+    return render(request, 'gym_app/add_stats.html', {'form': form})
 
 def about(request):
     return render(request, 'gym_app/about.html', {'title': 'About'})
