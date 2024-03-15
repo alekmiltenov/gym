@@ -58,6 +58,7 @@
 
          <style>
         #muscle_man{
+            height: 90%;
             margin-top: 25px;
             margin-left: 45px;
             width: 25%;
@@ -68,7 +69,7 @@
         </style>
 
 
-    <div class="fill" style="width: 40%; height: 83%; position: absolute; margin-top: -41%; margin-left: 50%" >
+    <div class="fill" style=" width: 40%; height: 93%; position: absolute; margin-top: -44%; margin-left: 50%" >
         <h3  id="text" style="text-align: center;">Measurments</h3>
 
     <form method = 'post' class="dataForm" >
@@ -102,7 +103,7 @@
         <label for="calves">Calves:</label>
         <input type="text" id="calves_input" name="calves" placeholder="Enter calves measurments">
         </div>
-        <button id = 'submit' type='button'>Submit</button>
+        <input type="submit" id="submit">
     </form>
     </div>
     <script src = 'measurments.js'></script>
@@ -119,25 +120,41 @@
                 border: 2px solid rgb(115, 115, 236); 
              }         
              .fill{
+                overflow: auto;  
+                align-items: center;
+                text-align: center;
                 border: 2px solid;
                 padding-left: 10px;
                 padding-right: 10px;
                 display: inline-block;
-            }         
-             label{
-                padding: 12px 12px 12px 0; 
+            }  
+               
+             .design label{
+                padding-top: 15px;
                 align-items: center;
-                 align-items: center;
-                 text-align: center;
-                 display: inline-block;        
-                 }          
-             input{
+                 text-align: center;     
+                }          
+             .design input{
+                margin: auto;
+                display: flex;
+                align-content: center;
+                flex-direction: column;
+                
+                text-align: center;
                 border: 3px solid;
                 width: 230px;
+                padding: 10px;
                 height: 15px;
-                padding: 12px;
                 box-sizing: border-box;
-            }     
+            }    
+            #submit{
+                margin-top: 12px;
+                margin-bottom: 5px;
+                background-color: red;
+                align-items: center;
+                text-align: center;
+                width: 150px;
+            } 
     </style>
 </body>
 </html>
