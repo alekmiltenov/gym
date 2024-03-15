@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView, CreateView
 from django.db.models import Avg
 from django.db.models.functions import TruncMonth
 from .models import MuscleMeasurement
+from .forms import DataForm
 
 # Create your views here.
 
