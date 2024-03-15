@@ -1,7 +1,6 @@
 var flag = 0;
-//clear function
-
-function clear() {
+//clearFields function
+function clearFields() {
     if(flag === 1) {
         document.getElementById('obliques_input').style.backgroundColor = 'grey';
     } else {
@@ -49,7 +48,7 @@ var obliquesEl = document.getElementById('obliques');
 
 function onObliquesClick() {
     flag = 1;
-    clear();
+    clearFields();
 }
 
 //forearms function
@@ -58,7 +57,7 @@ var forearmsEl = document.getElementById('forearms');
 
 function onForearmsClick() {
     flag = 2;
-    clear();
+    clearFields();
 }
 
 //biceps function
@@ -67,7 +66,7 @@ var bicepsEl = document.getElementById('biceps');
 
 function onBicepsClick() {
     flag = 3;
-    clear();
+    clearFields();
 }
 
 //traps function
@@ -76,7 +75,7 @@ var trapsEl = document.getElementById('traps');
 
 function onTrapsClick() {
     flag = 4;
-    clear();
+    clearFields();
 }
 
 
@@ -86,7 +85,7 @@ var chestEl = document.getElementById('chest');
 
 function onChestClick() {
     flag = 5;
-    clear();
+    clearFields();
 }
 
 
@@ -96,7 +95,7 @@ var quadsEl = document.getElementById('quads');
 
 function onQuadsClick() {
     flag = 6;
-    clear();
+    clearFields();
 }
 
 //calves function
@@ -105,25 +104,26 @@ var calvesEl = document.getElementById('calves');
 
 function onCalvesClick() {
     flag = 7;
-    clear();
+    clearFields();
 }
 
 var abdominalsEl = document.getElementById('abdominals');
 
 function onAbdominalsClick() {
     flag = 8;
-    clear();
+    clearFields();
 }
 
 
 //submit button 
 
-var submit = document.getElementById('sumbit');
 document.addEventListener('DOMContentLoaded', function() {
-    var submitButton = document.getElementById('submit');
+    var submitButton = document.getElementById('submit-btn');
 
     submitButton.addEventListener('click', function(event) {
         event.preventDefault();
+        document.getElementById("dataForm").action = "/stats/new/";
+        document.getElementById("dataForm").method = "POST";
     const muscle_data = {};
     if(document.getElementById('abdominals_input').value !== '') {
         muscle_data['abdominals'] = document.getElementById('abdominals_input').value;
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if(document.getElementById('obliques_input').value !== '') {
         muscle_data['obliques'] = document.getElementById('obliques_input').value;
     }
-    if(document.getElementById('forearms_stats').value !== '') {
+    if(document.getElementById('forearms_input').value !== '') {
         muscle_data['forearms'] = document.getElementById('forearms_input').value;
     }
     if(document.getElementById('biceps_input').value !== '') {
@@ -149,9 +149,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if(document.getElementById('calves_input').value !== '') {
         muscle_data['calves'] = document.getElementById('calves_input').value;
     }
-    console.log(muscle_data)
+    console.log(muscle_data);
     const dataJson = JSON.stringify(muscle_data);
-    console.log(dataJson)
     document.querySelector('[name="data"]').value = dataJson;
     document.getElementById('dataForm').submit();
 

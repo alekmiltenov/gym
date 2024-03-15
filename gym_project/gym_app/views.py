@@ -4,7 +4,7 @@ from django.db.models import Avg
 from django.db.models.functions import TruncMonth
 from .models import MuscleMeasurement
 from .forms import DataForm
-from django import forms
+from django.utils import timezone
 import json
 
 
@@ -88,29 +88,26 @@ class MuscleMeasurementDetailView(DetailView):
 
 
     
-def save_muscle_measurements(muscle_map):
-    for key, value in muscle_map:
-        if key is not'csrfmiddlewaretoken' and 'data':
-            
-            user = self.request.user
-            measurement = MuscleMeasurement(
-            user=user,
-            date_time=timezone.now(),
-            measurement=int(value[0]),  
-            muscle=key ,
-    )
+def save_muscle_measurements(muscle_map, request):
+    for key, value in muscle_map.items():    
+        user = request.user
+        measurement = MuscleMeasurement(
+        user=user,
+        date_time=timezone.now(),
+        measurement=int(value),  
+        muscle=key ,
+        )
         measurement.save()
         
 def submit_data(request):
     if request.method == 'POST':
-        print(request)
         form = DataForm(request.POST)
-        print(form.data)
-        #if form.is_valid():
-        json_data = request.POST.get('quads')
-        print(json_data)  # Convert JSON string back to Python dict
-       # save_muscle_measurements(data_json)
-                # Process your data_dict here
+        if form.is_valid():
+            data=request.POST.get('data')
+            print(data)
+            data_json = json.loads(data)
+            print(data_json)
+            save_muscle_measurements(data_json, request)
         
         context = {
         'monthly_averages': []
@@ -119,7 +116,7 @@ def submit_data(request):
     else:
         form = DataForm()
 
-    return render(request, 'gym_app/measurments.html', {'form': form})
+    return render(request, 'gym_app/measurements.html', {'form': form})
 
 def about(request):
     return render(request, 'gym_app/about.html', {'title': 'About'})
