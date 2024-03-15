@@ -54,6 +54,7 @@ def personal_stats(request):
 class MuscleMeasurementListView(ListView):
     muscles = ["abdominals", "obliques", "forearms", "biceps", "traps", "chest", "quads", "calves"]
     model = MuscleMeasurement
+    template_name ="gym_app/stats_muscles.html"
     context_object_name = "muscle_stats"
     def get_muscle_measurements(request, muscle_to_query):
         muscle_measurements = MuscleMeasurement.objects.filter(muscle=muscle_to_query).order_by('date_time')
