@@ -2,7 +2,7 @@
 
 //abdominals chart
 
-let abdominals_labels = ['mucsle','mucsle1','mucsle2','mucsle3','mucsle4']
+let abdominals_labels = ['muscle','muscle1','muscle2','muscle3','muscle4']
 
     let abdominals_muscleData = [0,50,88,107,50];
 
@@ -43,7 +43,7 @@ let abdominals_labels = ['mucsle','mucsle1','mucsle2','mucsle3','mucsle4']
 
 //obliques chart
 
-let obliques_labels = ['mucsle','mucsle1','mucsle2','mucsle3','mucsle4']
+let obliques_labels = ['muscle','muscle1','muscle2','muscle3','muscle4']
 
     let obliques_muscleData = [0,51,89,160,20];
 
@@ -82,7 +82,7 @@ let obliques_labels = ['mucsle','mucsle1','mucsle2','mucsle3','mucsle4']
 
     //forearms chart
 
-let forearms_labels = ['mucsle','mucsle1','mucsle2','mucsle3','mucsle4']
+let forearms_labels = ['muscle','muscle1','muscle2','muscle3','muscle4']
 
 let forearms_muscleData = [0,51,89,160,20];
 
@@ -122,7 +122,7 @@ const forearms_chart = new Chart(
 
 //biceps chart
 
-    let biceps_labels = ['mucsle','mucsle1','mucsle2','mucsle3','mucsle4']
+    let biceps_labels = ['muscle','muscle1','muscle2','muscle3','muscle4']
 
     let biceps_muscleData = [0,51,89,160,20];
     
@@ -162,8 +162,7 @@ const forearms_chart = new Chart(
 
         //shoulders chart
 
-let shoulders_labels = ['mucsle','mucsle1','mucsle2','mucsle3','mucsle4']
-
+let shoulders_labels = ['muscle','muscle1','muscle2','muscle3','muscle4']
 let shoulders_muscleData = [0,51,89,160,20];
 
 const shoulders_data = {
@@ -202,8 +201,7 @@ const shoulders_chart = new Chart(
 
     //traps chart
 
-    let traps_labels = ['mucsle','mucsle1','mucsle2','mucsle3','mucsle4']
-
+    let traps_labels = ['muscle','muscle1','muscle2','muscle3','muscle4']
     let traps_muscleData = [0,51,89,160,20];
     
     const traps_data = {
@@ -242,7 +240,7 @@ const shoulders_chart = new Chart(
 
         //chest chart
 
-let chest_labels = ['mucsle','mucsle1','mucsle2','mucsle3','mucsle4']
+let chest_labels = ['muscle','muscle1','muscle2','muscle3','muscle4']
 
 let chest_muscleData = [0,51,89,160,20];
 
@@ -283,7 +281,7 @@ const chest_chart = new Chart(
 
     //quads chart
 
-    let quads_labels = ['mucsle','mucsle1','mucsle2','mucsle3','mucsle4']
+    let quads_labels = ['muscle','muscle1','muscle2','muscle3','muscle4']
 
     let quads_muscleData = [0,51,89,160,20];
     
@@ -323,7 +321,7 @@ const chest_chart = new Chart(
 
         //calves chart
 
-let calves_labels = ['mucsle','mucsle1','mucsle2','mucsle3','mucsle4']
+let calves_labels = ['muscle','muscle1','muscle2','muscle3','muscle4']
 
 let calves_muscleData = [0,51,89,160,20];
 
