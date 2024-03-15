@@ -1,4 +1,5 @@
 {% extends 'gym_app/base.html' %}
+{% load static %}
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -73,9 +74,9 @@
     <div class="fill" style="width: 40%; height: 83%; position: absolute; margin-top: -41%; margin-left: 50%" >
         <h3  id="text" style="text-align: center;">Measurements</h3>
 
-    <form method = 'post' class="dataForm" >
+    <form method = "POST" id = "dataForm" action = "/stats/new/" class="dataForm" >
         {% csrf_token %}
-        {{ form }}
+       
         <div class="design">
         <label for="abdominals_input">Abdominals:</label>
         <input type="text" id="abdominals_input" name="abdominals" placeholder="Enter abdominals measurements">
@@ -104,10 +105,12 @@
         <label for="calves">Calves:</label>
         <input type="text" id="calves_input" name="calves" placeholder="Enter calves measurements">
         </div>
-        <button id = 'submit' type='button'>Submit</button>
+        <button id = 'submit' type='submit'>Submit</button>
     </form>
     </div>
-    <script src = 'measurments.js'></script>
+    {% block scripts %}
+    <script src = "{% static './gym_app/measurments.js' %}"></script>
+    {% endblock %}
     <style>         
     body{
         background-color: lightgray;

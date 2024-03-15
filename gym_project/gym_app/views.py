@@ -5,6 +5,7 @@ from django.db.models.functions import TruncMonth
 from .models import MuscleMeasurement
 from .forms import DataForm
 from django import forms
+import json
 
 
 def home(request):
@@ -53,7 +54,6 @@ def personal_stats(request):
 class MuscleMeasurementDetailView(DetailView):
     muscles = ["abdominals", "obliques", "forearms", "biceps", "traps", "chest", "quads", "calves"]
     model = MuscleMeasurement
-    form_class = DataForm
     context_object_name = "muscle_stats"
     def get_muscle_measurements(request, muscle_to_query):
     # Filter for biceps measurements
@@ -86,42 +86,40 @@ class MuscleMeasurementDetailView(DetailView):
             
         return all_muscle_data 
 
-class MuscleMeasurementCreateView(CreateView):
-    model = MuscleMeasurement
-    fields = ['date_time', 'measurement', 'muscle']  
-    widgets = {
-        'date_time': forms.HiddenInput(),
-        'muscle': forms.HiddenInput(),
-        'measurement': forms.HiddenInput(),
-    }
-    template_name = 'gym_app/measurments.html'  
-    success_url = '/success-url/'  
+
     
-    def save_muscle_measurements(muscle_map):
-        for key, value in muscle_map:
+def save_muscle_measurements(muscle_map):
+    for key, value in muscle_map:
+        if key is not'csrfmiddlewaretoken' and 'data':
+            
             user = self.request.user
             measurement = MuscleMeasurement(
             user=user,
             date_time=timezone.now(),
-            measurement=value,  
+            measurement=int(value[0]),  
             muscle=key ,
-        )
-            measurement.save()
-            
-    def submit_data(request):
-        if request.method == 'POST':
-            form = DataForm(request.POST)
-            if form.is_valid():
-                    data_json = form.cleaned_data['muscle_data']
-                    data_dict = json.loads(data_json)  # Convert JSON string back to Python dict
-                    measurements.save(data_dict)
-                    # Process your data_dict here
-            
-            return redirect('gym_app/success.html') 
-        else:
-            form = DataForm()
+    )
+        measurement.save()
+        
+def submit_data(request):
+    if request.method == 'POST':
+        print(request)
+        form = DataForm(request.POST)
+        print(form.data)
+        #if form.is_valid():
+        json_data = request.POST.get('quads')
+        print(json_data)  # Convert JSON string back to Python dict
+       # save_muscle_measurements(data_json)
+                # Process your data_dict here
+        
+        context = {
+        'monthly_averages': []
+        }
+        return render(request,'gym_app/home.html', context)
+    else:
+        form = DataForm()
 
-        return render(request, 'gym_app/measurements.html', {'form': form})
+    return render(request, 'gym_app/measurments.html', {'form': form})
 
 def about(request):
     return render(request, 'gym_app/about.html', {'title': 'About'})

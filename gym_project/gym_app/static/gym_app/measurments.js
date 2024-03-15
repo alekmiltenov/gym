@@ -119,34 +119,41 @@ function onAbdominalsClick() {
 //submit button 
 
 var submit = document.getElementById('sumbit');
+document.addEventListener('DOMContentLoaded', function() {
+    var submitButton = document.getElementById('submit');
 
-function sumbited() {
+    submitButton.addEventListener('click', function(event) {
+        event.preventDefault();
     const muscle_data = {};
-    if(document.getElementById('abdominals_input').value != ' ') {
-        muscle_data.set('abdominals', document.getElementById('abdominals_input').value);
+    if(document.getElementById('abdominals_input').value !== '') {
+        muscle_data['abdominals'] = document.getElementById('abdominals_input').value;
     }
-    if(document.getElementById('obliques_input').value != ' ') {
-        muscle_data.set('obliques', document.getElementById('obliques_input').value);
+    if(document.getElementById('obliques_input').value !== '') {
+        muscle_data['obliques'] = document.getElementById('obliques_input').value;
     }
-    if(document.getElementById('forearms_stats').value != ' ') {
-        muscle_data.set('forearms', document.getElementById('forearms_input').value);
+    if(document.getElementById('forearms_stats').value !== '') {
+        muscle_data['forearms'] = document.getElementById('forearms_input').value;
     }
-    if(document.getElementById('biceps_input').value != ' ') {
-        muscle_data.set('biceps', document.getElementById('biceps_input').value);
+    if(document.getElementById('biceps_input').value !== '') {
+        muscle_data['biceps'] = document.getElementById('biceps_input').value;
     }
-    if(document.getElementById('traps_input').value != ' ') {
-        muscle_data.set('traps', document.getElementById('traps_input').value);
+    if(document.getElementById('traps_input').value !== '') {
+        muscle_data['traps'] = document.getElementById('traps_input').value;
     }
-    if(document.getElementById('chest_input').value != ' ') {
-        muscle_data.set('chest', document.getElementById('chest_input').value);
+    if(document.getElementById('chest_input').value !== '') {
+        muscle_data['chest'] = document.getElementById('chest_input').value;
     }
-    if(document.getElementById('quads_input').value != ' ') {
-        muscle_data.set('quads', document.getElementById('quads_input').value);
+    if(document.getElementById('quads_input').value !== '') {
+        muscle_data['quads'] = document.getElementById('quads_input').value;
     }
-    if(document.getElementById('calves_input').value != ' ') {
-        muscle_data.set('calves', document.getElementById('calves_input').value);
+    if(document.getElementById('calves_input').value !== '') {
+        muscle_data['calves'] = document.getElementById('calves_input').value;
     }
+    console.log(muscle_data)
     const dataJson = JSON.stringify(muscle_data);
+    console.log(dataJson)
     document.querySelector('[name="data"]').value = dataJson;
     document.getElementById('dataForm').submit();
-}
+
+});
+});
