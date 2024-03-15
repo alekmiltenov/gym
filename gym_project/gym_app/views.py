@@ -43,7 +43,7 @@ def personal_stats(request):
 class MuscleMeasurementDetailView(DetailView):
     muscles = ["abdominals", "obliques", "forearms", "biceps", "traps", "chest", "quads", "calves"]
     model = MuscleMeasurement
-    context_object_name = muscle_stats
+    context_object_name = "muscle_stats"
     def get_muscle_measurements(request, muscle_to_query):
     # Filter for biceps measurements
         muscle_measurements = MuscleMeasurement.objects.filter(muscle=muscle_to_query).order_by('date_time')
@@ -73,8 +73,20 @@ class MuscleMeasurementDetailView(DetailView):
             all_muscle_data[muscle]=muscle_measurements
             all_muscle_data[muscle+ "_date"]=muscle_dates
             
-    return all_muscle_data   
+        return all_muscle_data   
 
+class MuscleMeasurementCreateView(CreateView):
+    model = MuscleMeasurement
+    def save_muscle_measurements(muscle_map):
+        for key, value in muscle_map:
+            user = self.request.user
+            measurement = MuscleMeasurement(
+            user=user,
+            date_time=timezone.now(),
+            measurement=value,  
+            muscle=key ,
+        )
+            measurement.save()
 
 def about(request):
     return render(request, 'gym_app/about.html', {'title': 'About'})
