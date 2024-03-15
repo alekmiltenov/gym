@@ -86,10 +86,6 @@ class MuscleMeasurementDetailView(DetailView):
 
 class MuscleMeasurementCreateView(CreateView):
     model = MuscleMeasurement
-    fields = ['date_time', 'measurement', 'muscle']  # Example fields
-    template_name = 'gym_app/measurments.html'  # Update to your template
-    success_url = '/success-url/'  # Update to your actual success URL
-    
     def save_muscle_measurements(muscle_map):
         for key, value in muscle_map:
             user = self.request.user
