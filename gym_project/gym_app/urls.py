@@ -1,10 +1,10 @@
-from django.urls import path # imports the path url function(allows us to add a path and declare where it leads to)
-#from . views import PostListView, PostDetailView, PostCreateView
+from django.urls import path
+from . views import MuscleMeasurementListView, MuscleMeasurementDetailView, MuscleMeasurementCreateView
 from . import views
 urlpatterns = [  
-    # path('about/', views.about, name='about-page'),
-    # path('', PostListView.as_view(),name='home-page'),
-    # path('post/<int:pk>/', PostDetailView.as_view(),name='post-detail'),
-    # path('post/new/', PostCreateView.as_view(),name='post-create'),
+    path('about/', views.about, name='about-page'),
+    path('', MuscleMeasurementListView.as_view(),name='home-page'),
+    path('post/<int:pk>/', MuscleMeasurementDetailView.as_view(),name='post-detail'),
+    path('post/new/', MuscleMeasurementCreateView.as_view(),name='post-create'),
     
 ] 
