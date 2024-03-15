@@ -37,6 +37,11 @@ function clear() {
     } else {
         document.getElementById('calves_input').style.backgroundColor = 'white';
     }
+    if(flag === 8) {
+        document.getElementById('abdominals_input').style.backgroundColor = 'grey';
+    } else {
+        document.getElementById('abdominals_input').style.backgroundColor = 'white';
+    }
 }
 //obliques functinon
 
@@ -103,3 +108,9 @@ function onCalvesClick() {
     clear();
 }
 
+var abdominalsEl = document.getElementById('abdominals');
+
+function onAbdominalsClick() {
+    flag = 8;
+    clear();
+}
