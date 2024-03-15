@@ -5,6 +5,16 @@ from PIL import Image
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    bio = models.TextField(default='No bio yet')
+    
+    STATUS_CHOICES = [
+        ('BULKING', 'Bulking'),
+        ('CUTTING', 'Cutting'),
+        ('MAINTAINING', 'Maintaining'),
+        ('NOT_GIVEN', 'Not Given')
+    ]
+    status = models.CharField(max_length=11, choices=STATUS_CHOICES, default='NOT_GIVEN')
+
     def __str__(self):
         return f'{self.user.username} Profile'
     
