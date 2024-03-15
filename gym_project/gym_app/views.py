@@ -88,16 +88,22 @@ class MuscleMeasurementDetailView(DetailView):
 
 class MuscleMeasurementCreateView(CreateView):
     model = MuscleMeasurement
-    def save_muscle_measurements(muscle_map):
-        for key, value in muscle_map:
-            user = self.request.user
-            measurement = MuscleMeasurement(
-            user=user,
-            date_time=timezone.now(),
-            measurement=value,  
-            muscle=key ,
-        )
-            measurement.save()
+    fields = ['date_time', 'measurement', 'muscle'] 
+    template_name = 'gym_app/measurments.html'  
+    success_url = '/success-url/'  
+
+    
+    def form_valid(self, form):
+        
+        muscle_map = {} 
+        for key, value in muscle_map.items():
+            MuscleMeasurement.objects.create(
+                user=self.request.user,
+                date_time=timezone.now(),
+                measurement=value,
+                muscle=key,
+            )
+        measurements.save()
             
     def submit_data(request):
         if request.method == 'POST':
