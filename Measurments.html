@@ -68,8 +68,8 @@
         </style>
 
 
-    <div id="form" style="width: 40%; height: 30%; position: absolute; margin-top: -47%; margin-left: 50%" >
-        <h3 style="text-align: center;">Measurments</h3>
+    <div class="fill" style="width: 40%; height: 83%; position: absolute; margin-top: -47%; margin-left: 50%" >
+        <h3  id="text" style="text-align: center;">Measurments</h3>
     <form action="" class="form">
         <div class="design">
         <label for="obliques_input">Obliques:</label>
@@ -99,34 +99,37 @@
     </form>
     </div>
     <script src = 'measurments.js'></script>
-    <style>
-        body{
-            background-color: lightgray;
-        }
-        #muscle_man{
-            display: inline-block;
-        }
-        #form{
-            align-items: center;
-            position: absolute;
-            text-align: center;
-            display: inline-block;
-        }
-         label{
-            padding: 12px 12px 12px 0;
-            align-items: center;
-            text-align: center;
-            display: inline-block;
-        }
-         input{
-            border: 3px solid;
-            display: inline-block;
-            width: 230px;
-            height: 15px;
-            padding: 12px;
-            box-sizing: border-box;
-            resize: vertical;
-        }
+    <style>         body{
+        background-color: lightgray;
+    } 
+            #muscle_man{
+                display: inline-block;
+            }        
+             #text{ 
+                color: red; 
+                background-color: aqua; 
+                border: 2px solid rgb(115, 115, 236); 
+             }         
+             .fill{
+                border: 2px solid;
+                padding-left: 10px;
+                padding-right: 10px;
+                display: inline-block;
+            }         
+             label{
+                padding: 12px 12px 12px 0; 
+                align-items: center;
+                 align-items: center;
+                 text-align: center;
+                 display: inline-block;        
+                 }          
+             input{
+                border: 3px solid;
+                width: 230px;
+                height: 15px;
+                padding: 12px;
+                box-sizing: border-box;
+            }     
     </style>
 </body>
 </html>
