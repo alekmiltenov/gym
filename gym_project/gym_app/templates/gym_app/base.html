@@ -6,6 +6,130 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
+    <nav id="navbar">
+       <img src="#" id="img1">
+        <ul>
+            <li><a href="personal_stats.html">Personal Stats</a></li>
+            <li><a href="personal_stats.html">Add Personal Record</a></li>
+            <li><a href="personal_stats.html">Sign In</a></li>
+            <li><a href="personal_stats.html">Profile</a></li>
+        </ul>
+    </nav>
+    </header>
+    <style>
+        #navbar{
+            background-color: hsl(0, 0%, 42%);
+        }
+        #navbar img{
+            margin-right: 15px;
+            padding: 15px;
+        }
+        #navbar ul{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-direction: row;
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+        }
+        #navbar a{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            display: block;
+            text-align: left;
+        }
+        #navbar a:hover{
+            background-color: hsl(0, 0%, 10%);
+        }
+        #img1{
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <footer>
+        <div class="container">
+            <div class="footer-container" id="contacts">
+                <h5>Contact Us</h5>
+                <p>Email: Info@gmail.com</p>
+                <p>Phone: 088XXXXXXX</p>
+            </div>
+            <div class="footer-container" id="quick">
+                <h5>Quick Links</h5>
+
+                <ul>
+                    <li><a href="personal_stats.html">Personal Stats</a></li>
+                    <li><a href="personal_stats.html">Add Personal Record</a></li>
+                    <li><a href="personal_stats.html">Sign In</a></li>
+                    <li><a href="personal_stats.html">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-container" id="img">
+                <img src="#">
+            </div>
+        </div>
+    </footer>
+    <style>
+        footer{
+            padding-top: 15px;
+            padding-bottom: 15px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            height: 25%;
+            width: 100%;
+            background-color: hsl(0, 0%, 42%);
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+        #contacts{
+            color: white;
+            font-size: 16px;
+            position: fixed;
+            left: 10px;
+            display: block;
+        }
+        #quick{
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            position: fixed;
+            left: 35%;
+            display: block;
+        }
+        #img{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            display: block;
+        }
+        ul{
+            display: block;
+        }
+        ul a{
+            color: white;
+            text-decoration: none;
+        }
+         ul a:hover{
+            background-color: rgba(58, 57, 57, 0.123);
+        }
+
+    </style>
+</body>
+</html>
+
+
+<!--------------------------------------------------------->
+
+
     <header class="site-header">
         <nav>
           <div class="Logo">
