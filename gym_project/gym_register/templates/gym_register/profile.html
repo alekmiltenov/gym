@@ -18,9 +18,17 @@
      {{ u_form | crispy }}
      {{ p_form | crispy }}
     </fieldset>
+    <textarea name="bio">{{ p_form.bio.value }}</textarea>
+    <select name="status">
+        <option value="BULKING" {% if p_form.status.value == "BULKING" %}selected{% endif %}>Bulking</option>
+        <option value="CUTTING" {% if p_form.status.value == "CUTTING" %}selected{% endif %}>Cutting</option>
+        <option value="MAINTAINING" {% if p_form.status.value == "MAINTAINING" %}selected{% endif %}>Maintaining</option>
+        <option value="NOT_GIVEN" {% if p_form.status.value == "NOT_GIVEN" %}selected{% endif %}>Not Given</option>
+    </select>
      <div class="form-group">
             <button class ="btn btn-outline-info" type="submit">Update</button> 
      </div>
  </form>
+ 
  </div>
 {% endblock content %}

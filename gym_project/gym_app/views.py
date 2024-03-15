@@ -5,8 +5,6 @@ from django.db.models.functions import TruncMonth
 from .models import MuscleMeasurement
 from .forms import DataForm
 
-# Create your views here.
-
 def home(request):
     context = {
         'monthly_averages': get_monthly_average_measurements(request)

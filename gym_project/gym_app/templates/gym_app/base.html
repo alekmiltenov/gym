@@ -8,17 +8,29 @@
 <body>
     <header>
     <nav id="navbar">
-       <img src="#" id="img1">
+       
         <ul>
-            <li><a href="personal_stats.html">Personal Stats</a></li>
-            <li><a href="personal_stats.html">Add Personal Record</a></li>
-            <li><a href="personal_stats.html">Sign In</a></li>
-            <li><a href="personal_stats.html">Profile</a></li>
+            <li><a href="/"><img src="#" id="img1"></a></li>
+            <li><a href="/stats">Personal Stats</a></li>
+            <li><a href="/stats/new">Add Personal Record</a></li>         
+                {% if user.is_authenticated %}
+                 <li> <a href="/logout">Logout</a></li>
+                  <li><a href="/profile">Profile</a></li>
+                  
+                  
+                {% else %}
+                  <li><a href="/login">Login</a></li>
+                 <li><a href="/register">Register</a></li>
+                  {% endif %}
         </ul>
     </nav>
     </header>
     <style>
         #navbar{
+        position: fixed;
+        top: 0;
+        width: 100%; /* Ensure full width */
+        z-index: 1000; /* Ensure it's above other content */
             background-color: hsla(0, 2%, 12%, 0.89);
         }
         #navbar img{
@@ -52,38 +64,19 @@
             left: 0;
             top: 0;
         }
-    </style>
-    <footer>
-        <div class="container">
-            <div class="footer-container" id="contacts">
-                <h5>Contact Us:</h5>
-                <p>Email: Info@gmail.com</p>
-                <p>Phone: 088XXXXXXX</p>
-            </div>
-            <div class="footer-container" id="quick">
-                <h5>Quick link:</h5>
-                <ul>
-                    <li><a href="personal_stats.html">Personal Stats</a></li>
-                    <li><a href="personal_stats.html">Add Personal Record</a></li>
-                    <li><a href="personal_stats.html">Sign In</a></li>
-                    <li><a href="personal_stats.html">Profile</a></li>
-                </ul>
-            </div>
-            <div class="footer-container" id="img">
-                <img src="#">
-            </div>
-        </div>
-    </footer>
-    <style>
-        footer{
-            position: absolute;
-            margin: 0;
-            padding: 0;
-            bottom: 0;
-            left: 0;
+    body{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding-top: 60px; /* Adjusted based on the height of the header */
+        padding-bottom: 27%; /* Adjusted based on the height of the footer */
+    }  
+        #footer{ 
+            position: relative;
             height: 27%;
             width: 100%;
-            background-color: hsla(0, 2%, 12%, 0.89);
+            color: blue;
+
         }
         .container{
             display: flex;
@@ -127,41 +120,29 @@
         }
 
     </style>
-</body>
-</html>
-
-
-<!--------------------------------------------------------->
-
-
-    <header class="site-header">
-        <nav>
-          <div class="Logo">
-            <a href="/">Gym</a>
-            <button class="dropdown"></button>
-            
-              <div class="left-side-links">  
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-              </div>
-              
-              <div class="right-side-links">
-                {% if user.is_authenticated %}
-                  <a href="/logout">Logout</a>
-                  <a href="/profile">Profile</a>
-                  
-                  
-                {% else %}
-                  <a href="/login">Login</a>
-                  <a href="/register">Register</a>
-                  {% endif %}
-              </div>
-          <div>
-        </nav>
-      </header>
-      <main>
+      <div>
         {% block content %}{% endblock %}
-
-      </main>
+      </div>
+      <div id = "footer">
+        <div class="container">
+            <div class="footer-container" id="contacts">
+                <h5>Contact Us:</h5>
+                <p>Email: Info@gmail.com</p>
+                <p>Phone: 088XXXXXXX</p>
+            </div>
+            <div class="footer-container" id="quick">
+                <h5>Quick link:</h5>
+                <ul>
+                    <li><a href="personal_stats.html">Personal Stats</a></li>
+                    <li><a href="personal_stats.html">Add Personal Record</a></li>
+                    <li><a href="personal_stats.html">Sign In</a></li>
+                    <li><a href="personal_stats.html">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-container" id="img">
+                <img src="#">
+            </div>
+        </div>
+</div>
 </body>
 </html>
