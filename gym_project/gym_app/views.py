@@ -110,7 +110,7 @@ class MuscleMeasurementCreateView(CreateView):
         else:
             form = DataForm()
 
-        return render(request, 'gym_app/add_stats.html', {'form': form})
+        return render(request, 'gym_app/measurements.html', {'form': form})
 
 def about(request):
     return render(request, 'gym_app/about.html', {'title': 'About'})
