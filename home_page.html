@@ -6,17 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <nav id="navbar">
-        <ul>
-            
-            <li><a href="personal_stats.html">Personal Stats</a></li>
-            <li><a href="personal_stats.html">Add Personal Record</a></li>
-            <li><a href="personal_stats.html">Sign In</a></li>
-            <li><a href="personal_stats.html">Profile</a></li>
-            <li> <img src="#"></li>
-        </ul>
-    </nav>
-    <style>
+   <style>
         
         #navbar img{
             margin-right: 15px;
@@ -46,13 +36,29 @@
             background-color: hsl(0, 0%, 10%);
         }
         #muscle_man{
+            margin: 5%;
             width: 25%;
         }
         .body-map__muscle:hover path{
             fill: purple;
         }
-
+        #common_chart {
+            width: 40%; 
+            height: 40%; 
+            /* position: absolute; 
+            margin-top: -50%; 
+            margin-left: 50% */
+        }
+        #man_and_chart {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
     </style>
+    <div id = 'man_and_chart'>
     <div id="muscle_man">
         <svg viewBox="0 0 673 1200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-screen lg:w-full  mc:h-[700px] 2xl:h-[90vh] 3xl:h-[95vh] 4xl:h-screen sm:mx-auto object-fit ">
             <a href = 'stats_muscles.html#abdominals_stats' class="body-map__muscle" id="abdominals">
@@ -108,13 +114,13 @@
         </g>
             <!-- Add more paths for other muscle groups -->
         </svg>
-        </div>
-        <div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js" integrity="sha512-CWVDkca3f3uAWgDNVzW+W4XJbiC3CH84P2aWZXj+DqI6PNbTzXbl1dIzEHeNJpYSn4B6U8miSZb/hCws7FnUZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </div>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js" integrity="sha512-CWVDkca3f3uAWgDNVzW+W4XJbiC3CH84P2aWZXj+DqI6PNbTzXbl1dIzEHeNJpYSn4B6U8miSZb/hCws7FnUZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <div style="width: 40%; height: 40%; position: absolute; margin-top: -33%; margin-left: 50%">
+    <div id = 'common_chart'>
         <canvas id="myChart" ></canvas>
     </div>
+</div>
 
 <script>
 
@@ -159,6 +165,5 @@
         config
     );
 </script>
-        </div>
 </body>
 </html>
