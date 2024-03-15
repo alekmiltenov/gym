@@ -8,8 +8,9 @@
 <body>
     <header>
     <nav id="navbar">
-       <a href="/"><img src="#" id="img1"></a>
+       
         <ul>
+            <li><a href="/"><img src="#" id="img1"></a></li>
             <li><a href="/stats">Personal Stats</a></li>
             <li><a href="/stats/new">Add Personal Record</a></li>         
                 {% if user.is_authenticated %}
@@ -26,6 +27,10 @@
     </header>
     <style>
         #navbar{
+        position: fixed;
+        top: 0;
+        width: 100%; /* Ensure full width */
+        z-index: 1000; /* Ensure it's above other content */
             background-color: hsla(0, 2%, 12%, 0.89);
         }
         #navbar img{
