@@ -34,6 +34,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'gym_app.apps.GymAppConfig',
+    'crispy_forms',
+    'crispy_bootstrap4',
     'gym_register.apps.GymRegisterConfig',
     'django.contrib.auth',
     'django.contrib.contenttypes',
