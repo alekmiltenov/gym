@@ -8,7 +8,3 @@ class MuscleMeasurement(models.Model):
     measurement = models.IntegerField()
     muscle = models.CharField(max_length=50)
 
-
-
-
-# Create your models here.
