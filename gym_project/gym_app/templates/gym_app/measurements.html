@@ -61,6 +61,7 @@
 
          <style>
         #muscle_man{
+            height: 90%;
             margin-top: 25px;
             margin-left: 45px;
             width: 25%;
@@ -71,77 +72,92 @@
         </style>
 
 
-    <div class="fill" style="width: 40%; height: 83%; position: absolute; margin-top: -41%; margin-left: 50%" >
-        <h3  id="text" style="text-align: center;">Measurements</h3>
+    <div class="fill" style=" width: 40%; height: 93%; position: absolute; margin-top: -44%; margin-left: 50%" >
+        <h3  id="text" style="text-align: center;">Measurments</h3>
 
-    <form id = "dataForm" class="dataForm" >
+    <form method = 'post' class="dataForm" >
         {% csrf_token %}
         {{ form }}
         <div class="design">
         <label for="abdominals_input">Abdominals:</label>
-        <input type="text" id="abdominals_input" name="abdominals" placeholder="Enter abdominals measurements">
+        <input type="text" id="abdominals_input" name="abdominals" placeholder="Enter abdominals measurments">
         <br>
         <label for="obliques_input">Obliques:</label>
-        <input type="text" id="obliques_input" name="obliques" placeholder="Enter obliques measurements">
+        <input type="text" id="obliques_input" name="obliques" placeholder="Enter obliques measurments">
         <br>
         <label for="forearms">Forearms:</label>
-        <input type="text" id="forearms_input" name="forearms" placeholder="Enter forearms measurements">
+        <input type="text" id="forearms_input" name="forearms" placeholder="Enter forearms measurments">
         <br>
         <label for="biceps">Biceps:</label>
-        <input type="text" id="biceps_input" name="biceps" placeholder="Enter biceps measurements">
+        <input type="text" id="biceps_input" name="biceps" placeholder="Enter biceps measurments">
         <br>
         <label for="shoulders">Sholders:</label>
-        <input type="text" id="shoulders_input" name="shoulders" placeholder="Enter shoulders measurements">
+        <input type="text" id="shoulders_input" name="shoulders" placeholder="Enter shoulders measurments">
         <br>
         <label for="traps">Traps:</label>
-        <input type="text" id="traps_input" name="traps" placeholder="Enter traps measurements">
+        <input type="text" id="traps_input" name="traps" placeholder="Enter traps measurments">
         <br>
         <label for="chest">Chest:</label>
-        <input type="text" id="chest_input" name="chest" placeholder="Enter chest measurements">
+        <input type="text" id="chest_input" name="chest" placeholder="Enter chest measurments">
         <br>
         <label for="quads">Quads:</label>
-        <input type="text" id="quads_input" name="quads" placeholder="Enter quads measurements">
+        <input type="text" id="quads_input" name="quads" placeholder="Enter quads measurments">
         <br>
         <label for="calves">Calves:</label>
-        <input type="text" id="calves_input" name="calves" placeholder="Enter calves measurements">
+        <input type="text" id="calves_input" name="calves" placeholder="Enter calves measurments">
         </div>
-        <button id = 'submit-btn' type='submit'>Submit</button>
+        <input type="submit" id="submit">
     </form>
     </div>
-
-    <script src = "{% static './gym_app/measurements.js' %}"></script>
+    <script src = 'measurments.js'></script>
     <style>         
     body{
-        background-color: lightgray;
+        background-color: rgba(189, 186, 186, 0.486);
     } 
             #muscle_man{
                 display: inline-block;
             }        
              #text{ 
-                color: red; 
-                background-color: aqua; 
-                border: 2px solid rgb(115, 115, 236); 
+                color: rgb(252, 251, 251); 
+                background-color: rgb(62, 95, 240); 
+                border: 2px hidden rgb(115, 115, 236); 
              }         
              .fill{
+                overflow: auto;  
+                align-items: center;
+                text-align: center;
                 border: 2px solid;
                 padding-left: 10px;
                 padding-right: 10px;
                 display: inline-block;
-            }         
-             label{
-                padding: 12px 12px 12px 0; 
+            }  
+               
+             .design label{
+                padding-top: 15px;
                 align-items: center;
-                 align-items: center;
-                 text-align: center;
-                 display: inline-block;        
-                 }          
-             input{
+                 text-align: center;     
+                }          
+             .design input{
+                margin: auto;
+                display: flex;
+                align-content: center;
+                flex-direction: column;
+                
+                text-align: center;
                 border: 3px solid;
                 width: 230px;
+                padding: 10px;
                 height: 15px;
-                padding: 12px;
                 box-sizing: border-box;
-            }     
+            }    
+            #submit{
+                margin-top: 12px;
+                margin-bottom: 5px;
+                background-color: yellow;
+                align-items: center;
+                text-align: center;
+                width: 150px;
+            } 
     </style>
 </body>
 </html>
