@@ -1,0 +1,48 @@
+/* Navigation Bar Style */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #141414;
+    color: white;
+    padding: 1rem;
+}
+
+#nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+#nav-toggle {
+    display: none;
+    background-color: #333;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    #nav-links a {
+        display: block;
+        padding: 1rem;
+        border-top: 1px solid white;
+    }
+
+    #nav-toggle {
+        display: block;
+    }
+}
