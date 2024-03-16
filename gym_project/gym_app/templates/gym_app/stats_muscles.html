@@ -1,6 +1,6 @@
-{% extends 'gym_app/base.html' %}
+<!-- {% extends 'gym_app/base.html' %}
 {% load static %}
-{% block content %}
+{% block content %} -->
 <div id="charts" muscle_measurements="{{ muscle_stats }}">
     <div id="abdominals_stats">
         <h1>Abdominalsstats</h1>
@@ -48,5 +48,7 @@
                                             <canvas id="calves_chart"></canvas>
                                         </div>
                                     </div>
+                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js"></script>
                                     <script src='stats_muscles.js'></script>
-                                    {% endblock content %}
+
+                                    <!-- {% endblock content %} -->
