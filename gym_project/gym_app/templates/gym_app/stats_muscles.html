@@ -1,6 +1,15 @@
 {% extends 'gym_app/base.html' %}
 {% load static %}
 {% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muscle statistics</title>
+</head>
+<body>
 <div id="charts" muscle_measurements="{{ muscle_stats }}">
     <div id="abdominals_stats">
         <h1>Abdominalsstats</h1>
@@ -48,5 +57,8 @@
                                             <canvas id="calves_chart"></canvas>
                                         </div>
                                     </div>
+                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js"></script>
                                     <script src='stats_muscles.js'></script>
+</body>
+</html>
                                     {% endblock content %}

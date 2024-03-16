@@ -1,5 +1,4 @@
 //abdominals chart
-
 document.addEventListener("DOMContentLoaded",function(){
    const chart_div= document.getElementById("charts");
    const chart_data= chart_div.getAttribute("muscle_measurements");
@@ -320,12 +319,10 @@ const chest_chart = new Chart(
     };
     
     const quads_chart = new Chart(
+
       document.getElementById('quads_chart'),
       quads_config
   );
-
-
-      //calves chart
 
 let calves_labels = ['muscle','muscle1','muscle2','muscle3','muscle4']
 
@@ -363,3 +360,4 @@ const calves_chart = new Chart(
   document.getElementById('calves_chart'),
   calves_config
 );
+
