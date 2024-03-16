@@ -1,5 +1,10 @@
 //abdominals chart
-
+document.addEventListener("DOMContentLoaded",function(){
+   const chart_div= document.getElementById("charts");
+   const chart_data= chart_div.getAttribute("muscle_measurements");
+   const json_chart_div= JSON.parse(chart_data);
+   console.log(json_chart_div);
+});
 //abdominals chart
 
 let abdominals_labels = ['muscle','muscle1','muscle2','muscle3','muscle4']
@@ -358,9 +363,4 @@ const calves_chart = new Chart(
     calves_config
 );
 
-document.addEventListener("DOMContentLoaded",function(){
-   const chart_div= document.getElementById("charts");
-   const chart_data= chart_div.getAttribute("muscle_measurements");
-   const json_chart_div= JSON.parse(chart_data);
-   console.log(json_chart_div);
-});
+
